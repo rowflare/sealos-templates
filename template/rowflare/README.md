@@ -33,7 +33,7 @@ The official image includes the web app, the API server and the storage engine. 
 
 ### Implementation Details
 
-- **Image**: `rowflare/rowflare:sha-d7a4683`, pinned by its multi-arch index digest. Upstream has not published a release image tag yet.
+- **Image**: `rowflare/rowflare:0.1.0`, pinned by its multi-arch index digest.
 - **Runtime**: One StatefulSet replica listening on port `8787`, a Service, an HTTPS Ingress and a Sealos App entry.
 - **Storage**: A 1 GiB persistent volume at `/data` holds the accounts database, every base and all attachments. Expand it from the resource card when your data grows.
 - **Settings**: `MODE=selfhost` and `ALLOW_SIGNUP=false`, so the first account becomes the owner and later users join by invite. `SECRET_KEY` is generated at deploy time and encrypts the AI service keys and SMTP or Resend credentials that workspace owners save. `APP_URL` is set to the generated HTTPS address for absolute links in emails and automations.
