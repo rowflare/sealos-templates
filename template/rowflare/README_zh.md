@@ -33,7 +33,7 @@ Docker 镜像在 workerd（Cloudflare 开源的 Workers 运行时）中运行与
 
 ### 实现细节
 
-- **镜像**：`rowflare/rowflare:sha-d7a4683`，并用多架构 index digest 固定。上游尚未发布正式版本的镜像标签。
+- **镜像**：`rowflare/rowflare:0.1.0`，并用多架构 index digest 固定。
 - **运行时**：一个 StatefulSet 副本，监听 `8787` 端口，配有 Service、HTTPS Ingress 和 Sealos App 入口。
 - **存储**：挂载在 `/data` 的 1 GiB 持久卷保存账号数据库、所有 base 和全部附件。数据增长后可在资源卡片中扩容。
 - **配置**：`MODE=selfhost` 且 `ALLOW_SIGNUP=false`，第一个注册的账号成为所有者，之后的用户通过邀请加入。`SECRET_KEY` 在部署时自动生成，用于加密工作空间所有者保存的 AI 服务密钥以及 SMTP 或 Resend 凭据。`APP_URL` 设置为生成的 HTTPS 地址，用于邮件和自动化中的绝对链接。
