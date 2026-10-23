@@ -40,10 +40,10 @@ metadata:
     app: ${{ defaults.app_name }}
     cloud.sealos.io/app-deploy-manager: ${{ defaults.app_name }}
   annotations:
-    originImageName: rowflare/rowflare:sha-d7a4683@sha256:381e645cd7a377bbfde8a4215ce40b6a500cffea611223ad6437058c86e0e5c7
+    originImageName: rowflare/rowflare:0.1.0@sha256:9767136d308a6abe5a59ceb443729168c375cdad48f4c2db4bddaad0f192a1fc
     deploy.cloud.sealos.io/minReplicas: '1'
     deploy.cloud.sealos.io/maxReplicas: '1'
-    docker-to-sealos.runtime-source: https://raw.githubusercontent.com/rowflare/rowflare/d7a46839f664333961595d7d62d4c0361920d681/docker-compose.yml
+    docker-to-sealos.runtime-source: https://raw.githubusercontent.com/rowflare/rowflare/f896c956a951215cfcfbc65b69a1dfe718b47787/docker-compose.yml
     docker-to-sealos.resource-override-source: 'Local Docker validation of this image: at 200m/256Mi the workerd runtime reached 235MiB of 256Mi after first sign-up and base creation, so memory uses the 512Mi tier (213-244MiB observed). CPU uses 500m for headroom on formula recalculation over large bases.'
 spec:
   replicas: 1
@@ -70,7 +70,7 @@ spec:
           type: RuntimeDefault
       containers:
         - name: ${{ defaults.app_name }}
-          image: rowflare/rowflare:sha-d7a4683@sha256:381e645cd7a377bbfde8a4215ce40b6a500cffea611223ad6437058c86e0e5c7
+          image: rowflare/rowflare:0.1.0@sha256:9767136d308a6abe5a59ceb443729168c375cdad48f4c2db4bddaad0f192a1fc
           imagePullPolicy: IfNotPresent
           env:
             - name: MODE
