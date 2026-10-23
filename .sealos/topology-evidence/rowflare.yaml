@@ -4,7 +4,7 @@ metadata:
   name: rowflare-topology
 spec:
   appName: rowflare
-  source: https://github.com/rowflare/rowflare/blob/d7a46839f664333961595d7d62d4c0361920d681/docker-compose.yml
+  source: https://github.com/rowflare/rowflare/blob/f896c956a951215cfcfbc65b69a1dfe718b47787/docker-compose.yml
   resources:
     - kind: StatefulSet
       name: ${{ defaults.app_name }}
